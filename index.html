@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clear Path Mediation</title>
+<meta name="description" content="Clear Path Mediation. Mediation of commercial and civil disputes in New York, with Michael D. Nacht, Esq.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Caslon+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: institutional law-firm structure. Deep navy masthead and hero, ivory body, brass hairlines as the single accent; Caslon for authority, Source Sans for reading. Deliberately one light look. */
+:root{
+  color-scheme:light;
+  --navy:#0e1c2f;
+  --navy-2:#162a44;
+  --ivory:#f7f5f0;
+  --paper:#ffffff;
+  --ink:#1b2430;
+  --muted:#5a6573;
+  --rule:#dcd6ca;
+  --brass:#a3814a;
+  --brass-light:#c9ac78;
+  --on-navy:#eef1f5;
+  --on-navy-muted:#a9b5c4;
+  --display:"Libre Caslon Display","Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --serif:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--navy)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1160px;margin-inline:auto;padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}
+
+/* Utility bar */
+.util{background:var(--navy);border-bottom:1px solid rgba(201,172,120,.25);color:var(--on-navy-muted);font-size:13px;letter-spacing:.04em}
+.util .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:9px}
+.util span{white-space:nowrap}
+
+/* Masthead */
+.mast{background:var(--navy);color:var(--on-navy)}
+.mast .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-block:26px;flex-wrap:wrap}
+.wordmark{text-decoration:none;color:var(--on-navy);display:flex;align-items:center;gap:16px}
+.wordmark .seal{width:46px;height:46px;flex:none}
+.wordmark .name{display:flex;flex-direction:column;line-height:1}
+.wordmark .n1{font-family:var(--display);font-size:27px;letter-spacing:.14em}
+.wordmark .n2{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.42em;color:var(--brass-light);margin-top:7px;padding-left:2px}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:30px;flex-wrap:wrap}
+nav a{color:var(--on-navy);text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+nav a:hover{color:var(--brass-light)}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:var(--on-navy);border-bottom:3px solid var(--brass)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr);padding-block:96px 104px}
+.hero h1{max-width:15em}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-light);margin:0 0 22px;display:flex;align-items:center;gap:14px}
+.kicker::before{content:"";width:36px;height:1px;background:var(--brass-light)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(38px,5vw,60px);line-height:1.1;margin:0 0 26px;text-wrap:balance}
+.lede{font-size:19px;color:var(--on-navy-muted);max-width:33em;margin:0 0 38px}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:16px 28px;border:1px solid var(--brass)}
+.btn-solid{background:var(--brass);color:var(--navy)}
+.btn-solid:hover{background:var(--brass-light);border-color:var(--brass-light)}
+.btn-ghost{color:var(--on-navy);border-color:rgba(238,241,245,.4)}
+.btn-ghost:hover{border-color:var(--on-navy)}
+
+.cred{background:rgba(255,255,255,.04);border:1px solid rgba(201,172,120,.35);padding:34px 34px 30px;min-width:0}
+.cred .who{font-family:var(--serif);font-size:24px;margin:0}
+.cred .role{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-light);margin:6px 0 22px;font-weight:600}
+.cred ul{list-style:none;margin:0;padding:0}
+.cred li{padding:13px 0;border-top:1px solid rgba(238,241,245,.12);font-size:16px;color:var(--on-navy);display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;line-height:1.5}
+.cred li::before{content:"";width:7px;height:7px;background:var(--brass);transform:rotate(45deg);margin-top:8px}
+
+/* Sections */
+section{padding-block:96px}
+.sec-white{background:var(--paper)}
+.head{max-width:760px;margin-bottom:52px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin:0 0 16px}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,3.6vw,44px);line-height:1.15;margin:0 0 18px;color:var(--navy);text-wrap:balance}
+.head p{margin:0;color:var(--muted);font-size:18px}
+
+/* Pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--rule)}
+.pillar{padding:36px 36px 8px 0;min-width:0}
+.pillar+.pillar{padding-left:36px;border-left:1px solid var(--rule)}
+.pillar h3{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--navy);margin:0 0 12px}
+.pillar p{margin:0;color:var(--muted)}
+
+/* Practice areas */
+.areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px}
+.area{padding:26px 0;border-top:1px solid var(--rule);min-width:0}
+.area h3{font-family:var(--serif);font-weight:400;font-size:21px;color:var(--navy);margin:0 0 6px}
+.area p{margin:0;color:var(--muted);font-size:16px}
+
+/* Process */
+.process{background:var(--navy);color:var(--on-navy)}
+.process h2{color:var(--on-navy)}
+.process .head p{color:var(--on-navy-muted)}
+.process .eyebrow{color:var(--brass-light)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--brass);padding-top:22px;min-width:0}
+.steps li::before{content:"Step " counter(s);display:block;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-light);margin-bottom:12px}
+.steps h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 10px;line-height:1.3}
+.steps p{margin:0;color:var(--on-navy-muted);font-size:15px;line-height:1.6}
+
+/* Mediator */
+.bio{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:64px;align-items:start}
+.portrait{aspect-ratio:4/5;max-width:100%;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border-bottom:3px solid var(--brass)}
+.portrait .mono{font-family:var(--display);font-size:64px;letter-spacing:.06em;color:var(--on-navy)}
+.portrait .rule{width:48px;height:1px;background:var(--brass-light)}
+.portrait .cap{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass-light);font-weight:600}
+.bio-text{min-width:0}
+.bio-text h2{margin-bottom:4px}
+.bio-text .title{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);font-weight:600;margin:0 0 28px}
+.bio-text p{margin:0 0 18px;max-width:42em}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;margin-top:40px;padding-top:32px;border-top:1px solid var(--rule)}
+.facts h3{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:700;margin:0 0 12px}
+.facts ul{list-style:none;margin:0;padding:0;font-size:15px;line-height:1.5}
+.facts li+li{margin-top:12px}
+.facts span{display:block;color:var(--muted);font-size:14px}
+
+/* Contact */
+.contact .grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:64px;align-items:start}
+.contact-card{background:var(--paper);border:1px solid var(--rule);border-top:3px solid var(--navy);padding:36px}
+.ci{padding:18px 0;border-bottom:1px solid var(--rule)}
+.ci:first-child{padding-top:0}
+.ci:last-child{border-bottom:none;padding-bottom:0}
+.ci .k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:700;margin:0 0 6px}
+.ci .v{font-family:var(--serif);font-size:20px;color:var(--navy);margin:0;word-break:break-word}
+.ci .v a{text-decoration:none;color:var(--navy);border-bottom:1px solid var(--rule)}
+.checklist{list-style:none;margin:24px 0 0;padding:0}
+.checklist li{padding:10px 0 10px 28px;position:relative;color:var(--ink)}
+.checklist li::before{content:"";position:absolute;left:4px;top:19px;width:7px;height:7px;background:var(--brass);transform:rotate(45deg)}
+
+/* Footer */
+footer{background:var(--navy);color:var(--on-navy-muted);font-size:14px;border-top:3px solid var(--brass)}
+footer .wrap{padding-block:48px;display:grid;gap:14px}
+footer .fname{font-family:var(--display);color:var(--on-navy);font-size:20px;letter-spacing:.14em;margin:0}
+footer p{margin:0;max-width:64em;line-height:1.65}
+footer .adv{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-light);font-weight:700}
+
+@media (max-width:980px){
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px}
+}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:48px;padding-block:60px 64px}
+  section{padding-block:64px}
+  .pillars{grid-template-columns:minmax(0,1fr)}
+  .pillar,.pillar+.pillar{padding:28px 0 20px;border-left:none}
+  .pillar+.pillar{border-top:1px solid var(--rule)}
+  .bio{grid-template-columns:minmax(0,1fr);gap:36px}
+  .portrait{max-width:260px}
+  .facts{grid-template-columns:minmax(0,1fr);gap:28px}
+  .contact .grid{grid-template-columns:minmax(0,1fr);gap:40px}
+}
+@media (max-width:600px){
+  .areas{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  nav ul{gap:18px}
+  nav a{font-size:12px}
+  .wordmark .n1{font-size:22px}
+  .cred,.contact-card{padding:26px}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <span>Mediation of Commercial and Civil Disputes</span>
+    <span>New York, New York · In Person and Virtual</span>
+  </div>
+</div>
+
+<header class="mast">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="Clear Path Mediation, home">
+      <svg class="seal" viewBox="0 0 46 46" aria-hidden="true">
+        <rect x="1" y="1" width="44" height="44" fill="none" stroke="#c9ac78" stroke-width="1"/>
+        <path d="M9 14 C17 14 19 23 25 23 M9 32 C17 32 19 23 25 23" fill="none" stroke="#eef1f5" stroke-width="1.6"/>
+        <path d="M25 23 H38" fill="none" stroke="#c9ac78" stroke-width="2.4"/>
+      </svg>
+      <span class="name"><span class="n1">CLEAR PATH</span><span class="n2">MEDIATION</span></span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#practice">Practice</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#mediator">Mediator</a></li>
+        <li><a href="#contact">Scheduling</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Clear Path Mediation</p>
+        <h1>Mediation of Commercial and Civil Disputes</h1>
+        <p class="lede">Clear Path Mediation provides rigorous, well-prepared mediation for businesses, insurers, counsel, and individuals. Sessions are conducted in person in New York City and virtually.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="#contact">Schedule a Mediation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec-white" aria-labelledby="approach-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Our Approach</p>
+        <h2 id="approach-h">A Litigator’s Command of the Case. A Neutral’s Discipline.</h2>
+        <p>Parties resolve disputes when they trust that the mediator understands the law, the facts, and what is at stake on each side. Clear Path Mediation is built on that understanding.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Substantive Experience</h3>
+          <p>A background in complex commercial, securities, and insurance litigation allows the mediator to evaluate liability, damages, and risk with the same rigor as counsel.</p>
+        </div>
+        <div class="pillar">
+          <h3>Thorough Preparation</h3>
+          <p>Every matter receives a careful review of the pleadings, submissions, and key documents, along with pre-session calls with counsel to identify the issues that will decide the case.</p>
+        </div>
+        <div class="pillar">
+          <h3>Strict Neutrality</h3>
+          <p>The mediator represents no party. Each side is heard fully, and every discussion is held in confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="practice" aria-labelledby="practice-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Mediation Services</p>
+        <h2 id="practice-h">Areas of Practice</h2>
+        <p>Clear Path Mediation handles pre-suit and pending matters in state and federal court, as well as disputes referred under contractual mediation clauses.</p>
+      </div>
+      <div class="areas">
+        <div class="area"><h3>Commercial and Contract</h3><p>Breach of contract, business torts, and disputes between companies, vendors, and customers.</p></div>
+        <div class="area"><h3>Securities</h3><p>Investor claims, broker-dealer disputes, and claims arising from offerings and financings.</p></div>
+        <div class="area"><h3>Shareholder and Partnership</h3><p>Disputes among owners, members, and partners, including buyouts and business separations.</p></div>
+        <div class="area"><h3>Construction</h3><p>Payment disputes, mechanic’s liens, delay and defect claims, and subcontractor matters.</p></div>
+        <div class="area"><h3>Employment</h3><p>Separation disputes, compensation and equity claims, and restrictive covenants.</p></div>
+        <div class="area"><h3>Intellectual Property</h3><p>Ownership, licensing, and infringement disputes, including chain-of-title matters.</p></div>
+        <div class="area"><h3>Real Property</h3><p>Boundary, title, easement, and purchase agreement disputes.</p></div>
+        <div class="area"><h3>Insurance</h3><p>Coverage disputes and claims involving carriers, insureds, and additional insureds.</p></div>
+        <div class="area"><h3>Landlord-Tenant</h3><p>Commercial and residential lease disputes, rent arrears, and indemnification claims.</p></div>
+        <div class="area"><h3>Personal Injury</h3><p>Motor vehicle, premises liability, and construction site injury claims.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process" aria-labelledby="process-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">The Mediation Process</p>
+        <h2 id="process-h">From Initial Inquiry to Executed Terms</h2>
+        <p>Each mediation follows a structured process designed to give the parties the best opportunity to resolve the matter in a single session.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Inquiry and Conflict Check</h3><p>Counsel provide the names of all parties and counsel. A conflict check is completed before any session is scheduled.</p></li>
+        <li><h3>Mediation Agreement</h3><p>All parties execute an agreement addressing confidentiality, fees, and the conduct of the session.</p></li>
+        <li><h3>Pre-Mediation Submissions</h3><p>Each side submits a confidential statement of its position, key documents, and settlement history.</p></li>
+        <li><h3>The Session</h3><p>The mediator conducts joint and private sessions, tests each position, and facilitates the exchange of proposals.</p></li>
+        <li><h3>Settlement Terms</h3><p>When agreement is reached, the material terms are reduced to writing and signed before the session concludes.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="mediator" class="sec-white" aria-labelledby="mediator-h">
+    <div class="wrap">
+      <div class="bio">
+        <div class="portrait" aria-hidden="true">
+          <span class="mono">MDN</span>
+          <span class="rule"></span>
+          <span class="cap">Mediator</span>
+        </div>
+        <div class="bio-text">
+          <p class="eyebrow">The Mediator</p>
+          <h2 id="mediator-h">Michael D. Nacht, Esq.</h2>
+          <p class="title">Founder and Mediator</p>
+          <p>Michael D. Nacht is a commercial litigation and corporate transactions attorney with more than ten years of experience representing public companies, investment banks, broker-dealers, business owners, and individuals.</p>
+          <p>As a litigator, he has led complex commercial and securities matters from inception through resolution in state and federal courts, argued before the Appellate Division, First and Second Departments, and arbitrated disputes before FINRA and the American Arbitration Association. He has negotiated numerous settlements and prepared mediation reports analyzing cases and recommending settlement positions to insurance carriers.</p>
+          <p>As transactional counsel, he has advised boards and executives and closed debt and equity financings. That experience gives him a practical understanding of the business considerations that drive resolution.</p>
+          <p>He has completed 40 hours of mediation training approved under Part 146 of the Rules of the Chief Administrative Judge of the New York State Unified Court System.</p>
+          <div class="facts">
+            <div>
+              <h3>Mediation Training</h3>
+              <ul>
+                <li>New York Part 146 Certificate<span>24 hours initial and 16 hours additional training, Phoenix Dispute Solutions, 2026</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Bar Admissions</h3>
+              <ul>
+                <li>State of New York</li>
+                <li>State of New Jersey</li>
+                <li>U.S. District Court, Southern District of New York</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Education</h3>
+              <ul>
+                <li>Brooklyn Law School<span>Juris Doctor</span></li>
+                <li>The Johns Hopkins University<span>B.S., Psychological and Brain Sciences</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <div class="wrap grid">
+      <div>
+        <p class="eyebrow">Scheduling</p>
+        <h2 id="contact-h">Schedule a Mediation</h2>
+        <p style="color:var(--muted);font-size:18px;margin:0;max-width:34em">To schedule a mediation or check availability, please contact the office with the following information:</p>
+        <ul class="checklist">
+          <li>Case caption and index or docket number, if filed</li>
+          <li>Names of all parties and counsel</li>
+          <li>A brief description of the dispute</li>
+          <li>Proposed dates and preferred format (in person or virtual)</li>
+        </ul>
+      </div>
+      <div class="contact-card">
+        <div class="ci"><p class="k">Email</p><p class="v"><a href="mailto:michael@clearpathmediation.law">michael@clearpathmediation.law</a></p></div>
+        <div class="ci"><p class="k">Telephone</p><p class="v"><a href="tel:+15163300841">(516) 330-0841</a></p></div>
+        <div class="ci"><p class="k">Location</p><p class="v">New York, New York</p></div>
+        <div class="ci"><p class="k">Fees</p><p class="v">Fee schedule available upon request</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="fname">CLEAR PATH MEDIATION</p>
+    <p class="adv">Attorney Advertising</p>
+    <p>Clear Path Mediation provides mediation services only. In serving as a mediator, Michael D. Nacht acts as a neutral. He does not represent any party and does not provide legal advice to any party. Parties are encouraged to consult their own counsel. Prior results do not guarantee a similar outcome.</p>
+    <p>© 2026 Clear Path Mediation. New York, New York.</p>
+  </div>
+</footer>
+</body>
+</html>
